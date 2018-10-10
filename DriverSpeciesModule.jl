@@ -10,7 +10,7 @@ using StatsBase # needed for sampling in RewireNetwork
 #functions that the module exports
 export ER_EcologicalNetwork, DriverSpecies, SystemDynamics, System_Dynamics, f_HollingII, GetFinalState
 export random_unit_vector, RewireNetwork
-export GetControllerSuccess, GetControllerSucess_Rate, GetControllerSucess_Rate_OverNetworkRealizations
+export GetControllerSuccess, GetControllerSuccess_Rate, GetControllerSuccess_Rate_OverNetworkRealizations
 
     """
     Returns a random ER network with:
@@ -372,7 +372,7 @@ export GetControllerSuccess, GetControllerSucess_Rate, GetControllerSucess_Rate_
     over a collection of initial conditions (parametrized by distance).
     Returns a pair (sucess_rate, mean proportion of driver species)
     """
-    function GetControllerSucess_Rate(
+    function GetControllerSuccess_Rate(
             xd,
             distance,
             NumberOfInitialConditions,
@@ -408,7 +408,7 @@ export GetControllerSuccess, GetControllerSucess_Rate, GetControllerSucess_Rate_
     Number of Networks (parametrized by N, C, sigma).
     Returns a pair of vectors (success_rate_vector, mean_prop_driverspecies_vector)
     """
-    function GetControllerSucess_Rate_OverNetworkRealizations(
+    function GetControllerSuccess_Rate_OverNetworkRealizations(
         distance,
         NumberOfInitialConditions,
         NumberOfNetworks,
@@ -443,7 +443,7 @@ export GetControllerSuccess, GetControllerSucess_Rate, GetControllerSucess_Rate_
             ## Compute sucess rate
             ##
             success_rate, mean_prop_driverspecies =
-            GetControllerSucess_Rate(xd, distance, NumberOfInitialConditions, tau, testTime, MaxNumberOfSteps, unstableValue, A, r, theta, RewiringProbability)
+            GetControllerSuccess_Rate(xd, distance, NumberOfInitialConditions, tau, testTime, MaxNumberOfSteps, unstableValue, A, r, theta, RewiringProbability)
 
             success_rate_vector = push!(success_rate_vector, success_rate)
             mean_prop_driverspecies_vector = push!(mean_prop_driverspecies_vector, mean_prop_driverspecies)
