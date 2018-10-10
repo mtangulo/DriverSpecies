@@ -1,5 +1,5 @@
 # DriverSpecies Module
-This is a Julia module accompanying the paper "Controlling complex microbial communities: a network based approach"
+This is a Julia module accompanying the paper "Controlling complex microbial communities: a network based approach".
 Authors: Marco Tulio Angulo, Claude H. Moog, and Yang-Yu Liu.
 Contact: mangulo@im.unam.mx or yyl@channing.harvard.edu.
 
